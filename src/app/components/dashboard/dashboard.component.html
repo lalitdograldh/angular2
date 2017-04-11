@@ -1,0 +1,110 @@
+<div class="main-login main-dashboard container">
+	
+<div class="login-component dashboard-component">
+		<h3>Dashboard</h3>
+		<ul class="nav navbar-nav">
+			<li class="dropdown" >
+				<!-- <a (click)="isOpen=!isOpen" aria-haspopup="true" aria-expanded="false">
+					<i class="fa fa-bell" aria-hidden="true"></i>
+					<span class="badge badge-red">5</span>
+				</a> -->
+				<a (click)="isOpen" routerLink="/notification" routerLinkActive="active" aria-haspopup="true" aria-expanded="false">
+					<i class="fa fa-bell" aria-hidden="true"></i>
+					<span class="badge badge-red">5</span>
+				</a>
+				<!-- <ul [hidden]="!isOpen">
+					<li><a>Badman</a></li>
+					<li><a>Sadman</a></li>
+					<li><a>Lieman</a></li>
+				</ul> -->
+				<a routerLink="/profile" routerLinkActive="active" class="nav-item">
+					<i class="fa fa-user" aria-hidden="true"></i>	
+				</a>
+			</li>
+		</ul>
+	</div>
+
+		<!-- <ul class="nav navbar-nav">
+			<li class="dropdown" >
+				<a   (click)="isOpen=!isOpen" aria-haspopup="true" aria-expanded="false">
+					<i class="fa fa-bell" aria-hidden="true"></i>
+					<span class="badge badge-red">5</span>
+				</a>
+				<ul [hidden]="isOpen">
+					<li><a>Badman</a></li>
+					<li><a>Sadman</a></li>
+					<li><a>Lieman</a></li>
+				</ul>
+				<a href="#" class="nav-item">
+					<i class="fa fa-user" aria-hidden="true"></i>	
+				</a>
+			</li>
+		</ul> -->	
+		
+	</div>
+
+
+	<div class="col-12 posTop">
+		<div class="col-6 text-center border">
+			<!-- <i class="fa fa-bell" aria-hidden="true"></i> -->
+			<img src="../../public/images/DisplayMain.png">
+			<img src="../../public/images/DisplayWhite.png" class="hover-image">
+
+			<span routerLink="/display-board" routerLinkActive="active">DISPLAY BOARD</span>
+		</div>
+		<div class="col-6 text-center border border-bottom">
+			<!-- <i class="fa fa-bell" aria-hidden="true"></i> -->
+			<img src="../../public/images/MemberMain.png">
+			<img src="../../public/images/MemberWhite.png" class="hover-image">
+			<span>MEMBER DIRECTORY</span>
+		</div>
+		<div class="col-6 text-center border">
+			<!-- <i class="fa fa-bell" aria-hidden="true"></i> -->
+			<img src="../../public/images/ExecutiveMain.png">
+			<img src="../../public/images/ExecutiveWhite.png" class="hover-image">
+			<span>EXECUTIVE COMMITTEE</span>
+		</div>
+		<div class="col-6 text-center border border-bottom">
+			<!-- <i class="fa fa-bell" aria-hidden="true"></i> -->
+			<img src="../../public/images/Hon'bleMain.png">
+			<img src="../../public/images/Hon'bleWhite.png" class="hover-image">
+			<span routerLink="/honble" routerLinkActive="active">HON'BLE JUDGES</span>
+		</div>
+		<div class="col-6 text-center border">
+			<!-- <i class="fa fa-bell" aria-hidden="true"></i> -->
+			<img src="../../public/images/CalenderMain.png">
+			<img src="../../public/images/CalenderWhite.png" class="hover-image">
+			<span routerLink="/calender" routerLinkActive="active">CALENDAR</span>
+		</div>
+		<div class="col-6 text-center border border-bottom">
+			<!-- <i class="fa fa-bell" aria-hidden="true"></i> -->
+			<img src="../../public/images/PushMain.png">
+			<img src="../../public/images/PushWhite.png" class="hover-image">
+			<span routerLink="/notification" routerLinkActive="active">PUSH NOTIFICATIONS</span>
+		</div>
+		<div class="col-6 text-center border">
+			<!-- <i class="fa fa-bell" aria-hidden="true"></i> -->
+			<img src="../../public/images/RoasterMain.png">
+			<img src="../../public/images/RoasterWhite.png" class="hover-image">
+			<span routerLink="/roaster" routerLinkActive="active">ROASTER</span>
+		</div>
+		<div class="col-6 text-center border border-bottom">
+			<!-- <i class="fa fa-bell" aria-hidden="true"></i> -->
+			<img src="../../public/images/CaseMain.png">
+			<img src="../../public/images/CaseWhite.png" class="hover-image">
+			<span>CASE LAW</span>
+		</div>
+		<div class="col-6 text-center border">
+			<!-- <i class="fa fa-bell" aria-hidden="true"></i> -->
+			<img src="../../public/images/SubscriptionMain.png">
+			<img src="../../public/images/SubscriptionWhite.png" class="hover-image">
+			<span routerLink="/subscription" routerLinkActive="active">SUBSCRIPTION PLANS</span>
+		</div>
+		<div class="col-6 text-center border border-bottom">
+			<!-- <i class="fa fa-bell" aria-hidden="true"></i> -->
+			<img src="../../public/images/WelfareMain.png">
+			<img src="../../public/images/WelfareWhite.png" class="hover-image">
+			<span>WELFARE FUND</span>
+		</div>
+	</div>
+

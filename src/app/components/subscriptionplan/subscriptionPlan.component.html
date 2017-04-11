@@ -1,0 +1,73 @@
+<div class="main-login main-dashboard main-calender">
+	<div class="login-component dashboard-component">
+		<a class="pull-left navBar">
+			<i class="fa fa-chevron-left"  (click)="navigate()" aria-hidden="true" ></i>
+		</a>
+		<h3>Subscription Plans</h3>
+		<ul class="nav navbar-nav">
+			<li class="dropdown">
+				<a (click)="isOpen" routerLink="/notification" routerLinkActive="active" aria-haspopup="true" aria-expanded="false">
+					<i class="fa fa-bell" aria-hidden="true"></i>
+					<span class="badge badge-red">5</span>
+				</a>
+				<a href="#" class="nav-item" routerLink="/profile" routerLinkActive="active">
+					<i class="fa fa-user" aria-hidden="true"></i>	
+				</a>
+			</li>
+		</ul>
+	</div>
+
+</div>
+<!-- <div class="section-subscription">
+	<div class="col-12 pull-left">
+		<div class="col-6 pull-left ContentPageFeedStoryItem">
+			<h2 class="monthly-subscription">MONTHLY SUBSCRIPTION</h2>
+			<p class="month-subscription">1 <span>MONTH</span></p>
+			<a class="btn" href="#">PAY NOW</a>
+		</div>
+		<div class="col-6 pull-left ContentPageFeedStoryItem">
+			<h2 class="quarterly-subscription">QUARTERLY SUBSCRIPTION</h2>
+			<p class="month-subscription">3 <span>MONTH</span></p>
+			<a class="btn" href="#">PAY NOW</a>
+		</div>
+	</div>
+
+</div> -->
+
+<div id="flexcontainer">
+	<div class="flexitem one">
+		<h2 class="monthly-subscription">MONTHLY SUBSCRIPTION</h2>
+		<p class="month-subscription">1</p><label>MONTH</label>
+		<!-- <a md-raised-button routerLink="." class="pay-now">PAY NOW</a> -->
+		<button routerLink= "/formsubscription"class="md-primary">PAY NOW</button>
+	</div>
+	<div class="flexitem two">
+		<h2 class="monthly-subscription">QUARTERLY SUBSCRIPTION</h2>
+		<p class="month-subscription">3</p><label>MONTH</label>
+		<!-- <a md-raised-button routerLink="." class="pay-now">PAY NOW</a> -->
+		<button class="md-primary">PAY NOW</button>
+	</div>
+
+
+</div>
+<div id="flexcontainer" class="margin-bottom">
+	<div class="flexitem one">
+		<h2 class="monthly-subscription">HALF YEARLY SUBSCRIPTION</h2>
+		<p class="month-subscription">6</p><label>MONTH</label>
+		<!-- <a md-raised-button routerLink="." class="pay-now">PAY NOW</a> -->
+		<button class="md-primary">PAY NOW</button>
+	</div>
+	<div class="flexitem two">
+		<h2 class="monthly-subscription">YEARLY SUBSCRIPTION</h2>
+		<p class="month-subscription">1</p><label>MONTH</label>
+		<md-select placeholder="Favorite food">
+			<md-option *ngFor="let food of foods" [value]="food.value">
+				{{ food.viewValue }}
+			</md-option>
+		</md-select>
+		<!-- <a md-raised-button routerLink="." class="pay-now">PAY NOW</a> -->
+		<button class="md-primary">PAY NOW</button>
+	</div>
+	
+
+</div>

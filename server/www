@@ -1,0 +1,135 @@
+var express = require('express');
+var payform = require('payform');
+var bodyParser = require('body-parser');
+var querystring = require('querystring');
+var http = require('https'); 
+var crypto = require('crypto');
+var app = express();
+var cors = require("cors");
+var merchantKey ="o7GJ6En7";
+var merchantTransactionIds ="5762488";
+var amount =100;
+var productinfo ="testing for subscription";
+var firstname="Testing";
+var	email="test@gmail.com";
+var	phone="9872923423";
+var	surl="http://localhost:3001/#/subscription";
+var	furl="http://localhost:3001/#/formsubscription";
+var salt= "HI1CKR5rrk";
+var service_provider ="payu_paisa";
+
+var string = merchantKey + '|' + merchantTransactionIds + '|' + amount + '|' + productinfo+ '|' + firstname + '|' + email + '|' + phone + '|'  +surl+ '|' + furl + '|||||||||' +salt;
+
+var data = querystring.stringify({ 
+	merchantKey:"merchantKey", 
+	merchantTransactionIds:"merchantTransactionIds",
+	amount:amount,
+	productinfo:"productinfo",
+	firstname:"firstname",
+	email:"email",
+	phone:"phone",
+	surl:"surl",
+	furl:"furl",
+	hash:crypto.createHash('sha512', salt).update(string).digest('hex'),
+	service_provider:"service_provider"
+});
+//console.log(data);
+
+// Validate a credit card number
+app.use(cors({ credentials: true, origin: 'http://localhost:3001' }));
+app.use( bodyParser.json() );       // to support JSON-encoded bodies
+app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+	extended: true
+})); 
+app.get('/api', function(req, res) {
+//payform.parseCardType('creditCard'); //=> 'visa'
+payform.validateCardNumber('creditCard'); //=> true
+payform.validateCardExpiry('expirationDate');
+payform.validateCardCVC('cvc'); 
+res.end('file catcher example');
+});
+
+app.post('/api', function(req, res) {
+	//console.log("dfdsfdsfdsf")
+
+	var creditCard = req.body.creditCard;
+	var expirationDate = req.body.expirationDate;
+	var fields = expirationDate.split('/');
+	//console.log(fields);
+	var months = fields[0];
+	//console.log(months);
+
+	var year = fields[1];
+	//console.log(year);
+	var cvc = req.body.cvc;
+	//console.log(creditCard,"dfdsfdsfdsf");
+
+
+//payform.parseCardType('creditCard'); //=> 'visa'
+payform.validateCardNumber(creditCard); //=> true
+payform.validateCardExpiry(months,year);
+payform.validateCardCVC(cvc); 
+
+var options = { 
+	hostname: 'www.payumoney.com', 
+	port: 443, 
+	path: '/payment/op/getPaymentResponse?'+data, 
+	method: 'POST', 
+	headers: { 
+		'Content-Type': 'application/json', 
+		'Content-Length': Buffer.byteLength(data), 
+		'content': data, 
+		'accept': '*/*', 
+		'Authorization': '0SC8FamYqWnwFzVgYKmiCfSsT96xerU8E+WBUh/KDXc=' 
+	} 
+}; 
+
+var req = http.request(options, function(res) { 
+	res.setEncoding('utf8'); 
+
+    res.on('data', function(chunk) {    // data will be available in callback 
+    	console.log(chunk);
+         
+    }); 
+}); 
+req.on('error',function(e){ 
+	console.log('Error'+ e.message); 
+}); 
+req.write(data); 
+//req.end();
+res.json(["ok"]);
+});
+
+
+
+
+
+
+// Get card type from number
+
+
+
+app.use(cors({ credentials: true, origin: 'http://localhost:3001' }));
+app.get('/api', function(req, res) {
+	res.end('file catcher example');
+});
+
+app.post('api/authenticate', function(req, res, next) {
+        // req.body contains the text fields
+          //  var finalData = results[1].replace(/\\/g, '');
+          res.json(["ok"]);
+      });
+
+app.post('api/search', function(req, res, next) {
+        // req.body contains the text fields
+          //  var finalData = results[1].replace(/\\/g, '');
+          res.json(["ok"]);
+      });
+var PORT = process.env.PORT || 3000;
+
+
+app.listen(PORT, function() {
+	console.log('Working on port ' + PORT);
+
+
+});

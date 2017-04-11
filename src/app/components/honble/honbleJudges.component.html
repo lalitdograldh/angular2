@@ -1,0 +1,61 @@
+<div class="main-login main-dashboard main-calender container">
+	
+<div class="login-component dashboard-component">
+		<a class="pull-left navBar">
+			<i class="fa fa-chevron-left"  (click)="navigate()" aria-hidden="true" ></i>
+		</a>
+
+		<h3>Hon'ble Judges</h3>
+		<ul class="nav navbar-nav">
+			<li class="dropdown">
+				<!-- <a (click)="isOpen=!isOpen" aria-haspopup="true" aria-expanded="false">
+					<i class="fa fa-bell" aria-hidden="true"></i>
+					<span class="badge badge-red">2</span>
+				</a> -->
+				<a (click)="isOpen" routerLink="/notification" routerLinkActive="active" aria-haspopup="true" aria-expanded="false">
+					<i class="fa fa-bell" aria-hidden="true"></i>
+					<span class="badge badge-red">5</span>
+				</a>
+				<!-- <ul [hidden]="!isOpen">
+					<li><a>Badman</a></li>
+					<li><a>Sadman</a></li>
+					<li><a>Lieman</a></li>
+				</ul> -->
+				<a href="#" class="nav-item">
+					<i class="fa fa-user" aria-hidden="true"></i>	
+				</a>
+			</li>
+		</ul>
+	</div>
+
+
+	<div id="search-component">
+		<input #term  id ="search-box" (keyup)="search(term.value)" placeholder="Search by name or court room" />
+
+		<i class="fa fa-search pull-right searchIcon" aria-hidden="true"></i>
+	</div>		
+
+
+	
+</div>
+
+<table class="table table-bordered">
+	<thead class="thead-inverse">
+		<tr>
+			<th>SNo</th>
+			<th>HON'BLE JUDGES</th>
+			<th>COURT ROOM</th>
+		</tr>
+	</thead>
+	<tbody>
+
+		<tr *ngFor = "let item of items | async "  class="search-result" >
+			<td >{{item.id}}</td>
+			<td style="color:#0194CA;font-size: 20px">{{item.name}}</td>
+			<td>
+				<span style="width: 50px;height: 30px; border-radius: 50px; background-color: #0094CE; color: #fff; display: inline-block; font-size: 19px;">{{item.courtRoom}}
+				</span>
+			</td>
+		</tr>
+	</tbody>
+</table>

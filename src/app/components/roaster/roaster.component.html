@@ -1,0 +1,40 @@
+<div class="main-login main-roaster container">
+	
+	<div class="login-component dashboard-component">
+		<a class="pull-left navBar">
+			<i class="fa fa-chevron-left"  (click)="navigate()" aria-hidden="true" ></i>
+		</a>
+
+		<h3>Roster</h3>
+		<ul class="nav navbar-nav">
+			<li class="dropdown">
+				<!-- <a (click)="isOpen=!isOpen" aria-haspopup="true" aria-expanded="false">
+					<i class="fa fa-bell" aria-hidden="true"></i>
+					<span class="badge badge-red">2</span>
+				</a> -->
+				<a (click)="isOpen" routerLink="/notification" routerLinkActive="active" aria-haspopup="true" aria-expanded="false">
+					<i class="fa fa-bell" aria-hidden="true"></i>
+					<span class="badge badge-red">5</span>
+				</a>
+				<!-- <ul [hidden]="!isOpen">
+					<li><a>Badman</a></li>
+					<li><a>Sadman</a></li>
+					<li><a>Lieman</a></li>
+				</ul> -->
+				<a href="#" class="nav-item">
+					<i class="fa fa-user" aria-hidden="true"></i>	
+				</a>
+			</li>
+		</ul>
+	</div>
+	
+</div>
+
+<tabset>
+
+	<tab *ngFor="let tabz of tabs"
+	[heading]="tabz.title"
+	[customClass]="tabz.customClass">
+	{{tabz?.content}}
+</tab>
+</tabset>

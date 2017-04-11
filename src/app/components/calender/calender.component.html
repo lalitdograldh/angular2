@@ -1,0 +1,33 @@
+<div class="main-login main-dashboard main-calender container">
+	<div class="login-component dashboard-component">
+		<a class="pull-left navBar">
+			<i class="fa fa-chevron-left"  (click)="navigate()" aria-hidden="true" ></i>
+		</a>
+		<h3>Hoildays Calender</h3>
+		<ul class="nav navbar-nav">
+			<li class="dropdown">
+				<a (click)="isOpen" routerLink="/notification" routerLinkActive="active" aria-haspopup="true" aria-expanded="false">
+					<i class="fa fa-bell" aria-hidden="true"></i>
+					<span class="badge badge-red">5</span>
+				</a>
+				<a href="#" class="nav-item" routerLink="/profile" routerLinkActive="active">
+					<i class="fa fa-user" aria-hidden="true"></i>	
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>
+
+<multiple-date-picker [highlightDays]="highlightDays" ></multiple-date-picker>
+<div class="container">
+	<div class="row">
+		<div *ngFor = "let event of highlightDays" class ="col-12 pull-left eventFull">
+			<div class="eventFullNew">
+				<div class="col-3 pull-left eventStart">{{event.datename }}</div>
+				<div class="col-9 pull-left eventTitle">{{event.title}}
+					<!-- <span class="eventEnd"> {{event.end}} </span> -->
+				</div>
+			</div>
+		</div>	
+	</div>	
+</div>

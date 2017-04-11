@@ -1,0 +1,12 @@
+[
+  { "id": 1, "name": "Shiavax jal Vazifdar","courtRoom":1 },
+  { "id": 2, "name": "Satish Kumar Mittal","courtRoom":2 },
+  { "id": 3, "name": "Hemant Gupta","courtRoom":3 },
+  { "id": 4, "name": "S.S. Saron","courtRoom":4 },
+  { "id": 5, "name": "Rajive Bhulla","courtRoom":5 },
+  { "id": 6, "name": "Ajay Kumar Mittal","courtRoom":6 },
+  { "id": 7, "name": "Surya Kant","courtRoom":7 },
+  { "id": 8, "name": "Muttaci Jeyapaul","courtRoom":8 },
+  { "id": 9, "name": "T.P.S Mann","courtRoom":9 },
+  { "id": 10, "name": "Mahesh Grover","courtRoom":10 }
+]

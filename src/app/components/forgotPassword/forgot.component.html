@@ -1,0 +1,23 @@
+	
+	<div class="main-login">
+		<div class="col-md-12 text-center login-component">
+			<h3>FORGET PASSWORD</h3>
+		</div>
+	</div>
+	<form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
+	
+		<div class="col-md-11 col-md-offset-1">
+			<p class="restpassowrdtext">To reset your password,
+				please enter your license no below.
+			</p>
+			<div class="form-group" [ngClass]="{ 'has-error': f.submitted && !fusername.valid }">
+				<input type="text" class="form-control" name="fusername" [(ngModel)]="model.fusername" #fusername="ngModel" required  placeholder="Enter your license no." />
+			</div> 
+
+			<div class="form-group">
+				<button type="submit" class="btn ion-button">Reset your Password</button>
+			</div>
+		</div>
+	</form>
+
+
